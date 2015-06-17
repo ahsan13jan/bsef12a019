@@ -1,0 +1,106 @@
+﻿@model Sample_MVC.Models.Article
+
+
+
+    <h2 align="center">PUCIT Magazine</h2>
+
+
+
+ 
+
+    <div class="row">
+
+        <div class="col-md-2">
+
+            <h3>
+                
+                   Hello  @Session["Name"]
+                    
+                    
+            </h3>
+        </div>
+
+
+        <div class="col-md-8 ">
+
+            <div class="container">
+                <div class="jumbotron">
+
+                    <table>
+
+                        <tr>
+
+                            <td align="center">
+                                <h3 style="margin-left:210px"> <b>Publish Your article </b></h3>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td align="center">
+                                <p style="font-size:15px;margin-left:190px">Feel free to write whatever is in your mind ..</p>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <form role="form" method="post" action="/Login/SaveArticle" enctype="multipart/form-data">
+                                    
+                                    <a style="color:black ; margin-left:280px">Title </a> <br />
+                                
+                                    @Html.TextBox("Title", null, new { @class = "form-control" , style="margin-left:190px"  })
+
+                                    
+                                    <div class="form-group ">
+                                        
+
+                                        @Html.TextAreaFor(m => m.Text, new { @class = "form-control", rows="12" ,  id="comment" ,  style="margin-left:190px"   })
+
+
+                                    </div>
+
+
+                                    <input type="submit" style="margin-left:280px" size="20" name="Publish" />
+
+
+
+
+                                    <a style="color:black;font-size:15px">Upload Image: </a> <input size="10px" type="file" name="image" />
+
+
+
+                                </form>
+                            </td>
+
+                        </tr>
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-3">
+
+
+            <form method="post" action="/Login/logoff">
+                <button type="submit">logoff</button>
+
+            </form>
+
+
+            
+        </div>
+
+
+
+
+    </div>
+
+

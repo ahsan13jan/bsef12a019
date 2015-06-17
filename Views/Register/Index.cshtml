@@ -1,0 +1,95 @@
+﻿@model Sample_MVC.Models.WebUser
+
+
+<script>
+
+
+    function func() {
+        var nameEntered = $('#Username').val();
+        if (nameEntered == "") {
+            alert("Please enter UserName");
+            return;
+        }
+
+        $.getJSON('/Register/checkResult?username=' + nameEntered, function (d) {
+            if (d == true) {
+                alert("Sorry!  this UserName already exists...");
+
+            }
+
+            else if (d == false) {
+                alert("Its OK");
+
+
+            }
+        }
+                  )
+
+    }
+
+
+</script>
+
+<div class="row">
+    <h2 class="col-md-12"> PUCIT Magazine </h2>
+</div>
+
+<div class="row">
+
+    <div class="col-md-5">
+    </div>
+
+    <a class="col-md-2"> Please Enter the entries</a>
+</div>
+
+
+<div class="row">
+
+    <div class="col-md-4">
+    </div>
+
+    <div class="col-lg-4">
+
+        <div class="jumbotron">
+
+
+
+
+
+            <form method="post" action="RegisterUser">
+                <b style="margin-left:10px ; font-size:15px">Name</b>
+
+
+                @Html.TextBox("FullName", null, new { @class = "form-control" })
+
+
+
+
+                <b style="margin-left: 10px; font-size: 15px">Username</b>
+
+                @Html.TextBox("Username", null, new { @class = "form-control" })
+
+
+                <p id="checkparagraph">  </p>
+
+                <b style="margin-left: 10px; font-size: 15px">Password</b>
+
+                @Html.TextBox("Password", null, new { @class = "form-control" })
+
+                <button style="margin-left:60px " type="submit" class="btn btn-default center-block">Register</button>
+
+            </form>
+            <button name="checkButton" onclick="func()">check Username </button>
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+

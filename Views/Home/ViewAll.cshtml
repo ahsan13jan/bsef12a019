@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "ViewAll";
+}
+
+<h2>ViewAll</h2>
+
+
+
+<div class="col-md-9">
+   
+
+
+            <table>
+
+
+               
+
+
+
+                <tr>
+
+                    <td>
+
+                       
+                                @foreach (var i in Model)
+                                {
+                        <div class="container">
+
+                            <div class="jumbotron">
+                             
+
+                                    <a href="/Home/ViewArticle/@i.Id" style="font-size:20px;color:black"> @i.Title   </a>
+
+                                <img class="pull-right" src="~/Files/@i.Pic" height="140" width="190">
+                                    <br />
+                                    <p style="font-size:15px" > @i.Text </p>
+
+
+                               
+
+                            </div>
+
+
+                        </div>
+                                    
+                                }
+                    </td>
+
+
+                  
+
+                </tr>
+
+
+
+            </table>
+
+
+
+
+
+        </div>
+
+ 
+      

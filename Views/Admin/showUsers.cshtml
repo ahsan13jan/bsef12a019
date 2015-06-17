@@ -1,0 +1,110 @@
+﻿@model List<Sample_MVC.Models.WebUser>
+
+
+<div class="container">
+    <div class="row">
+        <h1>Admin Panel</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="well">
+                <div>
+                    <ul class="nav">
+                        <li>
+                            <label label-default="" class="tree-toggle nav-header">Articles</label>
+                            <ul class="nav tree">
+                                <li>
+                                    <a href="/Admin/Published">Published</a>
+                                </li>
+                                <li>
+                                    <a href="/Admin/NotPublished">Not Published</a>
+                                </li>
+                                <li>
+                                    <a href="/Admin/SearchArticle">Search Article</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <label label-default="" class="tree-toggle nav-header">Position</label>
+                            <ul class="nav tree">
+                                <li>
+                                    <a href="/Admin/Main">Main</a>
+                                </li>
+                                <li>
+                                    <a href="/Admin/RecentBlogs">Recent Blogs</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <label label-default="" class="tree-toggle nav-header">Users</label>
+                            <ul class="nav tree">
+                                <li>
+                                    <a href="/Admin/showUsers">Active Users</a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-9">
+            <div class="jumbotron">
+
+                <div class="container">
+
+
+                    <table>
+
+                        <tr>
+                            <td colspan="1"> <label label-default="" class="tree-toggle nav-header">Dashboard : Recent Articles</label></td>
+
+                            <td></td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="list-group">
+
+                                    @foreach (Sample_MVC.Models.WebUser i in Model)
+                                    {
+
+                                        <a href="/Admin/showUserData/@i.Id" class="list-group-item" style="width:700px; height:40px;font-size:15px"> @i.FullName  @i.Username</a>
+
+                                    }
+
+                                </div>
+                            </td>
+
+                            <td></td>
+
+                            <td></td>
+
+                        </tr>
+
+
+
+                    </table>
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
